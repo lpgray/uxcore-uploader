@@ -1,7 +1,7 @@
 {
- "name": "uxcore-uploader",
- "version": "3.1.7",
- "description": "uxcore-uploader component for react",
+ "name": "uxcore-cg-uploader",
+ "version": "1.0.0",
+ "description": "uxcore-cg-uploader component for react",
  "main": "build/index.js",
  "scripts": {
   "start": "uxcore-tools run start",
