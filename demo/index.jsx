@@ -141,10 +141,7 @@ class Demo3 extends React.Component {
       ref="uploader"
       sizeLimit="3072kb"
       accept="*.jpeg, *.jpg *.png"
-      readOnly 
       multiple={false}
-      isOnlyImg
-      isVisual={false}
       progressInterval={100}
       queueCapcity={2}
       actionOnQueueLimit="cover"
@@ -154,7 +151,8 @@ class Demo3 extends React.Component {
       tips={imgTips}
       name="file"
       url="http://eternalsky.me:8122/file/upload"
-      locale="zh-cn-img"
+      locale="zh-cn"
+      getFilesContainer={files => <div style={{ backgroundColor: 'black' }}>{files}</div>}
     />);
   }
 }

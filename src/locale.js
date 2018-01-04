@@ -39,6 +39,16 @@ const locale = {
     upload_failed: '上传失败',
     upload_files: '上传图片',
   },
+  'en-us-img': {
+    download: 'download',
+    preview: 'preview',
+    remove: 'remove',
+    retry: 'retry',
+    upload: 'upload',
+    uploading: 'uploading',
+    upload_failed: 'failed',
+    upload_files: 'upload files',
+  },
 };
 
 locale.en = locale['en-us'];

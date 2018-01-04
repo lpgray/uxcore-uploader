@@ -37,6 +37,7 @@ class Uploader extends React.Component {
     isVisual: false,
     isOnlyImg: false,
     showErrFile: true,
+    getFilesContainer: null,
   };
 
   static propTypes = {
@@ -54,6 +55,7 @@ class Uploader extends React.Component {
     isOnlyImg: PropTypes.bool,
     showErrFile: PropTypes.bool,
     children: PropTypes.any,
+    getFilesContainer: PropTypes.func,
   };
 
   constructor(props) {
@@ -254,7 +256,7 @@ class Uploader extends React.Component {
 
   render() {
     const me = this;
-    const { locale, isVisual } = this.props;
+    const { locale, isVisual, getFilesContainer } = this.props;
     let children = this.props.children;
     const readOnly = this.props.readOnly;
     const uploadingFiles = me.getUploadingFiles();
@@ -273,7 +275,7 @@ class Uploader extends React.Component {
         core={this.core}
         isVisual={this.props.isVisual}
       >{children}</Picker>);
-    const files = (uploadingFiles.length > 0 || notDeletedDefaultFiles.length > 0)
+    let files = (uploadingFiles.length > 0 || notDeletedDefaultFiles.length > 0)
       ? (
         <FileList
           key="files"
@@ -289,6 +291,9 @@ class Uploader extends React.Component {
           interval={this.props.progressInterval}
         />)
       : null;
+    if (getFilesContainer) {
+      files = getFilesContainer(files);
+    }
     const contents = isVisual ? [tips, files, picker] : [picker, tips, files];
 
     return (
