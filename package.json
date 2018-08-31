@@ -33,27 +33,27 @@
     "uxcore-uploader"
   ],
   "devDependencies": {
+    "babel-polyfill": "6.x",
     "console-polyfill": "^0.2.2",
-    "enzyme": "^3.0.0",
+    "enzyme": "^3.5.0",
+    "enzyme-adapter-react-16": "1.x",
     "expect.js": "~0.3.1",
-    "kuma-base": "1.x",
+    "kuma-base": "^1.17.1",
     "react": "16.x",
     "react-dom": "16.x",
     "react-test-renderer": "16.x",
-    "uxcore-kuma": "*",
-    "uxcore-tools": "^0.3.0",
-    "babel-polyfill": "6.x",
-    "enzyme-adapter-react-16": "1.x"
+    "uxcore-kuma": "^14.2.0",
+    "uxcore-tools": "^0.3.0"
   },
   "dependencies": {
     "object-assign": "^4.0.0",
-    "prop-types": "15.x",
+    "prop-types": "^15.6.2",
     "react-lifecycles-compat": "^3.0.4",
     "uploadcore": "~2.3.0",
-    "uxcore-album": "^0.3.15",
-    "uxcore-button": "^0.4.11",
-    "uxcore-icon": "^0.1.1",
-    "uxcore-progress": "^1.1.0"
+    "uxcore-album": "^0.3.17",
+    "uxcore-button": "^0.4.19",
+    "uxcore-icon": "^0.1.22",
+    "uxcore-progress": "^1.2.0"
   },
   "author": "lpgray",
   "contributors": [],
