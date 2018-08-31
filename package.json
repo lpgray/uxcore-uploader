@@ -1,6 +1,6 @@
 {
   "name": "uxcore-uploader-extend",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "description": "uxcore-uploader component extend",
   "main": "build/index.js",
   "scripts": {
