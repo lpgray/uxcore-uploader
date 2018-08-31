@@ -2,6 +2,43 @@
 
 ---
 
+## 3.3.2 
+
+* `CHANGED` modify picker position when isVisual
+
+## 3.3.1 
+
+* `CHANGED` show download icon when readonly
+
+## 3.2.2 
+
+* `CHANGED` add new prop 'hideUploadIcon'
+
+## 3.2.1 
+
+* `CHANGED` hidepicker when isVisual and over queueCapcity
+
+## 3.2.0
+
+* `CHANGED` upgrade react to v16
+
+## 3.1.11
+
+* `CHANGED` show image with album if click image
+
+## 3.1.10
+
+* `CHANGED` fix button style (issue #66)
+* `CHANGED` fix mutable props (issue #71)
+
+## 3.1.9
+
+* `CHANGED` fix some wrong style
+
+## 3.1.8
+
+* `CHANGED` replace preview icon
+
 ## 3.1.7
 * `FIXED` merge pull request #63
 

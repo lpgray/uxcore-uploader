@@ -48,14 +48,14 @@ export default class DefaultFileItem extends React.Component {
         if (!isVisual) {
           return (<div className={readOnlyStyle}>
             <div className="field-image-info">
-              <a className="field-image-preview" href={previewUrl} target="_blank">
+              <a className="field-image-preview" onClick={me.onShowFile.bind(this, file, previewUrl)} href="javascript:void(0)">
                 <img src={previewUrl} />
               </a>
             </div>
             <div className="field-image-name" title={file.name}>{file.name}</div>
             <div className="field-status">
               {previewUrl ? <a className="kuma-upload-action preview-action" onClick={me.onShowFile.bind(this, file, previewUrl)} target="_blank" href={previewUrl}><Icon name="fangda" /></a> : null}
-              {downloadUrl && !readOnly ? <a className="kuma-upload-action download-action" target="_blank" download href={downloadUrl}><Icon name="xiazai" /></a> : null}
+              {downloadUrl ? <a className="kuma-upload-action download-action" target="_blank" download href={downloadUrl}><Icon name="xiazai" /></a> : null}
               {response.canRemove !== false && !readOnly ? <a className="kuma-upload-action remove-action" onClick={this.onCancel.bind(this, file)}>
                 <Icon name="shanchu" />
               </a> : undefined}
@@ -64,7 +64,7 @@ export default class DefaultFileItem extends React.Component {
         }
         return (<div className={readOnlyStyle}>
           <div className="field-image-info">
-            <a className="field-image-preview" href={previewUrl} target="_blank">
+            <a className="field-image-preview" onClick={me.onShowFile.bind(this, file, previewUrl)} href="javascript:void(0)">
               <img src={previewUrl} />
             </a>
           </div>
@@ -87,7 +87,7 @@ export default class DefaultFileItem extends React.Component {
           </label>
           <div className="field-status">
             {previewUrl ? <a className="kuma-upload-action preview-action" onClick={me.onShowFile.bind(this, file, previewUrl)} target="_blank" href={previewUrl}><Icon name="fangda" /></a> : null}
-            {downloadUrl && !readOnly ? <a className="kuma-upload-action download-action" target="_blank" download href={downloadUrl}><Icon name="xiazai" /></a> : null}
+            {downloadUrl ? <a className="kuma-upload-action download-action" target="_blank" download href={downloadUrl}><Icon name="xiazai" /></a> : null}
             {response.canRemove !== false && !readOnly ? <a className="kuma-upload-action remove-action" onClick={this.onCancel.bind(this, file)}><Icon name="shanchu" /></a> : null}
           </div>
         </div>

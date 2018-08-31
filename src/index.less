@@ -17,6 +17,9 @@
 
 .@{uploader-prefix-class}er {
   min-width: 200px;
+  .uxicon-fangda:before {
+    content: '\e6a8';
+  }
 }
 
 .@{uploader-prefix-class}-filelist {
@@ -31,11 +34,14 @@
   }
   >.inner {
     overflow: visible;
+    & .@{uploader-prefix-class}-picker-visual{
+      margin-top: 0;
+    }
   }
 }
 
 .@{uploader-prefix-class}-filelist.filelist-visual.nwmode {
-  float: left;
+  float: none;
   margin-top: 5px;
   width: auto;
 }
@@ -43,7 +49,7 @@
 .@{uploader-prefix-class}-picker-visual {
   width: 100px;
   height: 100px;
-  margin-top: 6px;
+  margin-top: 5px;
   display: inline-block;
   position: relative;
   line-height: normal;
@@ -54,13 +60,11 @@
     border-radius: 3px;
     padding-top: 43px;
     font-size: 12px;
-    color: rgba(31, 56, 88, .8);
+    color: @normal-alpha-3;
     height: 100%;
     width: 100%;
     transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    background: rgba(31, 56, 88, 0.04);
-    border: 1px dashed rgba(31, 56, 88, 0.20);
+    border: 1px dashed @normal-alpha-5;
   }
   .uxicon-zengjia1 {
     position: absolute;
@@ -78,38 +82,67 @@
   line-height: normal;
   &:hover {
     .kuma-button {
-      border-color: @normal-alpha-3;
-      background-color: @normal-alpha-8;
+      &-primary {
+        background-color: @brand-primary-hover;
+        border-color: @brand-primary-hover;
+        color: @basic-100;
+      }
+      &-secondary {
+        border-color: @normal-alpha-3;
+        background-color: @normal-alpha-8;
+      }
+      &-outline {
+        background-color: @brand-primary-alpha-8;
+        border-color: @brand-primary-hover;
+        color: @brand-primary-hover;
+      }
     }
   }
   &:active {
     .kuma-button {
-      border-color: @normal-alpha-1;
-      background-color: @normal-alpha-7;
-      color: @normal-alpha-1;
+      &-primary {
+        background-color: @brand-primary-focus;
+        border-color: @brand-primary-focus;
+        color: @basic-100;
+      }
+      &-secondary {
+        border-color: @normal-alpha-1;
+        background-color: @normal-alpha-7;
+        color: @normal-alpha-1;
+      }
+      &-outline {
+        background-color: @brand-primary-alpha-7;
+        border-color: @brand-primary-focus;
+        color: @brand-primary-focus;
+      }
     }
   }
   &:visited {
     .kuma-button {
-      color: @gray;
+      &-primary {
+        color: @basic-100;
+      }
+      &-secondary {
+        color: @normal-alpha-3;
+      }
+      &-outline {
+        color: @brand-primary;
+      }
     }
   }
   .@{uploader-prefix-class}-button {
     display: inline-block;
     background: #fff;
     outline: none;
-    border: 1px solid rgba(31, 56, 88, .3);
+    border: 1px solid @normal-alpha-5;
     border-radius: 3px;
     padding: 0 8px;
     font-size: 12px;
-    color: rgba(31, 56, 88, .8);
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    color: @normal-alpha-3;
     box-sizing: border-box;
     line-height: 26px;
     height: 28px;
     transition: all .3s ease;
-    -webkit-transition: all .3s ease;
 
     .kuma-icon-uploading {
       margin-right: 3px;
@@ -164,20 +197,52 @@
     transition: opacity 0.2s;
     &:hover {
       .kuma-button {
-        border-color: @normal-alpha-3;
-        background-color: @normal-alpha-8;
+        &-primary {
+          background-color: @brand-primary-hover;
+          border-color: @brand-primary-hover;
+          color: @basic-100;
+        }
+        &-secondary {
+          border-color: @normal-alpha-3;
+          background-color: @normal-alpha-8;
+        }
+        &-outline {
+          background-color: @brand-primary-alpha-8;
+          border-color: @brand-primary-hover;
+          color: @brand-primary-hover;
+        }
       }
     }
     &:active {
       .kuma-button {
-        border-color: @normal-alpha-1;
-        background-color: @normal-alpha-7;
-        color: @normal-alpha-1;
+        &-primary {
+          background-color: @brand-primary-focus;
+          border-color: @brand-primary-focus;
+          color: @basic-100;
+        }
+        &-secondary {
+          border-color: @normal-alpha-1;
+          background-color: @normal-alpha-7;
+          color: @normal-alpha-1;
+        }
+        &-outline {
+          background-color: @brand-primary-alpha-7;
+          border-color: @brand-primary-focus;
+          color: @brand-primary-focus;
+        }
       }
     }
     &:visited {
       .kuma-button {
-        color: @gray;
+        &-primary {
+          color: @basic-100;
+        }
+        &-secondary {
+          color: @normal-alpha-3;
+        }
+        &-outline {
+          color: @brand-primary;
+        }
       }
     }
     .kuma-icon-add {
@@ -213,20 +278,52 @@
     background: #ebeff2;
     &:hover {
       .kuma-button {
-        border-color: @normal-alpha-3;
-        background-color: @normal-alpha-8;
+        &-primary {
+          background-color: @brand-primary-hover;
+          border-color: @brand-primary-hover;
+          color: @basic-100;
+        }
+        &-secondary {
+          border-color: @normal-alpha-3;
+          background-color: @normal-alpha-8;
+        }
+        &-outline {
+          background-color: @brand-primary-alpha-8;
+          border-color: @brand-primary-hover;
+          color: @brand-primary-hover;
+        }
       }
     }
     &:active {
       .kuma-button {
-        border-color: @normal-alpha-1;
-        background-color: @normal-alpha-7;
-        color: @normal-alpha-1;
+        &-primary {
+          background-color: @brand-primary-focus;
+          border-color: @brand-primary-focus;
+          color: @basic-100;
+        }
+        &-secondary {
+          border-color: @normal-alpha-1;
+          background-color: @normal-alpha-7;
+          color: @normal-alpha-1;
+        }
+        &-outline {
+          background-color: @brand-primary-alpha-7;
+          border-color: @brand-primary-focus;
+          color: @brand-primary-focus;
+        }
       }
     }
     &:visited {
       .kuma-button {
-        color: @gray;
+        &-primary {
+          color: @basic-100;
+        }
+        &-secondary {
+          color: @normal-alpha-3;
+        }
+        &-outline {
+          color: @brand-primary;
+        }
       }
     }
     .kuma-icon-add {
